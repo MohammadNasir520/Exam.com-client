@@ -1,4 +1,4 @@
-import FreeExamTopicCard from "@/components/Views/FreeExams/FreeExamTopicCard/FreeExamTopicCard";
+import FreeExamCard from "@/components/Views/FreeExams/FreeExamCard/FreeExamTopicCard";
 import LiveExamTopicCard from "@/components/ui/LiveExamTopicCard/LiveExamTopicCard";
 import React from "react";
 
@@ -26,7 +26,7 @@ const FreeExams = () => {
       <div className="  grid md:grid-cols-2 lg:grid-cols-3 space-y-6 ">
         {FreeExamTopicData?.map((topic) => (
           <div className="flex justify-center items-center  " key={topic.id}>
-            <FreeExamTopicCard FreeExamTopicData={topic}></FreeExamTopicCard>
+            <FreeExamCard FreeExamTopicData={topic}></FreeExamCard>
           </div>
         ))}
       </div>

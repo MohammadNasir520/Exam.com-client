@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
+import { IoMdStar } from "react-icons/io";
 
 const TopTeacherCard = () => {
   return (
@@ -16,8 +17,8 @@ const TopTeacherCard = () => {
           <h4 className=" text-2xl  font-semibold  text-black">
             Mohammad Nasir
           </h4>
-          <p className="mt-1  text-base   font-semibold leading-relaxed text-gray-700">
-            Math Teacher
+          <p className="mt-1  text-base   font-semibold leading-relaxed text-gray-700 flex items-center gap-2">
+            <span> Math Teacher</span> <IoMdStar />
           </p>
           <p className="mt-1    font-normal leading-relaxed text-gray-700">
             Because it&apos;s about motivating the doers. Because I&apos;m here

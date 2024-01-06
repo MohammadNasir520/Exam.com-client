@@ -8,7 +8,11 @@ const TopTeachers = () => {
         <h1 className="text-2xl font-bold my-2">Top Teachers</h1>
         <p>Here are our Top Teachers</p>
       </div>
-      <TopTeacherCard></TopTeacherCard>
+      <div className="grid  md:grid-cols-2 lg:grid-cols-3 flex justify-center items-center">
+        <TopTeacherCard></TopTeacherCard>
+        <TopTeacherCard></TopTeacherCard>
+        <TopTeacherCard></TopTeacherCard>
+      </div>
     </div>
   );
 };
