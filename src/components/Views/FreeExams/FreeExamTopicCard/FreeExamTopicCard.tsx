@@ -9,14 +9,15 @@ const FreeExamTopicCard = ({
 }) => {
   const { title } = FreeExamTopicData;
   console.log(FreeExamTopicData);
+  console.log(title);
 
   return (
-    <div className="h-[90px] w-[250px]   border  bg-[#a9d6e5] rounded-sm ">
-      <div>
-        <Image src={math} height={120} width={120} alt="math pic"></Image>
+    <div className=" flex  h-[120px] w-[300px]   border  bg-[#61a5c2] rounded-sm ">
+      <div className="w-1/2 flex justify-center items-center">
+        <Image src={math} height={160} width={140} alt="math pic"></Image>
       </div>
-      <div>
-        <h1 className=" text-white"> {title}</h1>
+      <div className="w-1/2">
+        <h1 className=" text-white  text-center font-bold text-lg"> {title}</h1>
       </div>
     </div>
   );
