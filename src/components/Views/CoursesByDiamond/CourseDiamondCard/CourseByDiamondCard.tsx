@@ -8,8 +8,6 @@ const CourseByDiamondCard = ({
   courseDiamondData: any;
 }) => {
   const { title, totalTopic, totalQuestion } = courseDiamondData;
-  console.log(courseDiamondData);
-  console.log(title);
 
   return (
     <div className=" h-[120px] w-[300px]   border  bg-[#f6fff8] rounded-sm flex  cursor-pointer ">
@@ -18,8 +16,8 @@ const CourseByDiamondCard = ({
       </div>
       <div className="w-1/2 text-[#012a4a]  p-2">
         <h1 className="  text-center font-bold text-lg"> {title}</h1>
-        <p>Topic: {totalTopic}</p>
-        <p>Questions: {totalQuestion}</p>
+        <p className="font-semibold">Topic: {totalTopic}</p>
+        <p className="font-semibold">Questions: {totalQuestion}</p>
       </div>
     </div>
   );
