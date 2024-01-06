@@ -1,3 +1,4 @@
+import CoursesByDiamond from "@/components/Views/CoursesByDiamond/page";
 import FreeExams from "@/components/Views/FreeExams/page";
 import LiveExams from "@/components/Views/LiveExams/LiveExams";
 import Practices from "@/components/Views/Practices/Practices";
@@ -11,6 +12,7 @@ export default function Home() {
       <LiveExams></LiveExams>
       <Practices></Practices>
       <FreeExams></FreeExams>
+      <CoursesByDiamond></CoursesByDiamond>
     </div>
   );
 }

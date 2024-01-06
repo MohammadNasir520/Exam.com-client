@@ -2,13 +2,13 @@ import Image from "next/image";
 import React from "react";
 import math from "@/assets/images/math.jpeg";
 
-const FreeExamTopicCard = ({
-  FreeExamTopicData,
+const CourseByDiamondCard = ({
+  courseDiamondData,
 }: {
-  FreeExamTopicData: any;
+  courseDiamondData: any;
 }) => {
-  const { title, totalTopic, totalQuestion } = FreeExamTopicData;
-  console.log(FreeExamTopicData);
+  const { title, totalTopic, totalQuestion } = courseDiamondData;
+  console.log(courseDiamondData);
   console.log(title);
 
   return (
@@ -25,4 +25,4 @@ const FreeExamTopicCard = ({
   );
 };
 
-export default FreeExamTopicCard;
+export default CourseByDiamondCard;

@@ -16,10 +16,10 @@ const FreeExams = () => {
     { title: "Math", id: 10, totalTopic: 20, totalQuestion: 687 },
   ];
   return (
-    <div>
+    <div className="min-h-screen my-7">
       <div>
-        <h1 className="font-bold text-2xl text-center">Free Exams</h1>
-        <p className="text-center ">
+        <h1 className="font-bold text-2xl text-center my-6 ">Free Exams</h1>
+        <p className="text-center  my-6">
           Here You can Participants Free of cost exams how many times you want
         </p>
       </div>
