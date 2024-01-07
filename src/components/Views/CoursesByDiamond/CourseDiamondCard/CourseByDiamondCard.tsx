@@ -11,7 +11,7 @@ const CourseByDiamondCard = ({
   const { title, totalTopic, totalQuestion, id } = courseDiamondData;
 
   return (
-    <Link href={`/exam-topics/${id}`}>
+    <Link href={`/exam/topics/${id}`}>
       <div className=" h-[120px] w-[300px]   border  bg-[#f6fff8] rounded-sm flex  cursor-pointer ">
         <div className="w-1/2 flex justify-center items-center">
           <Image src={math} height={160} width={140} alt="math pic"></Image>
