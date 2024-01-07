@@ -28,7 +28,7 @@ const SingleQuizCard = ({
   setWrongAnsCount: any;
 }) => {
   const [disabled, setDisabled] = useState(false);
-  const correctAnswer = question.correctAnswer;
+  const correctAnswer = question?.correctAnswer;
 
   const handleOption = (anseredQestion: any) => {
     setAnsweredQuestion([...answeredQuestion, { question, anseredQestion }]);
@@ -47,7 +47,7 @@ const SingleQuizCard = ({
 
   return (
     <div className="flex justify-center items-center">
-      <div className="my-10 w-4/5   border  bg-red-50 ">
+      <div className="my-10 w-full  md:w-4/5   border  bg-red-50 ">
         <div className="questions text-center">
           {serial}.{question.question}
         </div>

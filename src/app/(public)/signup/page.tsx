@@ -8,9 +8,9 @@ const SignUp = () => {
           <div className="text-white">
             <form>
               <div className="mb-1 text-lg flex flex-col">
-                <label htmlFor="" className="label text-start">
-                  <span className="label-text text-white">Your Full Name </span>
-                </label>
+                <p className="p text-start">
+                  <span className="p-text text-white">Your Full Name </span>
+                </p>
                 <input
                   className="w-72 border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit placeholder-black text-start shadow-lg outline-none backdrop-blur-md"
                   type="text"
@@ -19,9 +19,9 @@ const SignUp = () => {
                 />
               </div>
               <div className="mb- text-lg flex flex-col">
-                <label htmlFor="" className="label text-start">
-                  <span className="label-text text-white">Your Email</span>
-                </label>
+                <p className="p text-start">
+                  <span className="p-text text-white">Your Email</span>
+                </p>
                 <input
                   className="w-72 border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit  placeholder-black text-start shadow-lg outline-none backdrop-blur-md"
                   type="text"
@@ -32,7 +32,7 @@ const SignUp = () => {
 
               <div className="mb- text-lg w-72 flex flex-col">
                 <p className=" text-start">
-                  <span className="label-text text-white">Password</span>
+                  <span className="p-text text-white">Password</span>
                 </p>
                 <input
                   className="w-72 rounded border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit  placeholder-black text-start shadow-lg outline-none backdrop-blur-md"

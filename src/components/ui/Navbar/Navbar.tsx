@@ -26,7 +26,7 @@ const Navbar = () => {
         </nav>
 
         {user ? (
-          <Link href={"/signUp"}>
+          <Link href={"/signin"}>
             <button
               //   onClick={handleLogout}
               className="inline-flex items-center bg-[#61a5c2] hover:bg-[#013a63]  text-white border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0"
@@ -35,18 +35,18 @@ const Navbar = () => {
             </button>
           </Link>
         ) : (
-          <>
-            <Link className="mx-3" href={"/login"}>
+          <div className="flex">
+            <Link className="mx-3" href={"/signin"}>
               <button className="inline-flex items-center  bg-[#61a5c2] hover:bg-[#013a63]  text-white border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
                 Login
               </button>
             </Link>
-            <Link href={"/signUp"}>
+            <Link href={"/signup"}>
               <button className="inline-flex items-center bg-[#61a5c2] hover:bg-[#013a63] text-white  border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
                 SignUp
               </button>
             </Link>
-          </>
+          </div>
         )}
       </nav>
     </header>

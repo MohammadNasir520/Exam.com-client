@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import SingleQuizCard from "@/components/ui/cards/SingleQuizCard/SingleQuizCard";
 
-const Quiz = () => {
+const ExamPage = () => {
   const data = [
     {
       _id: "63fa5d203390caf05411d521",
@@ -51,13 +51,13 @@ const Quiz = () => {
 
   // stored answered option for checking correct anser
   const [answeredQuestion, setAnsweredQuestion] = useState([]);
-  console.log(answeredQuestion);
+  // console.log(answeredQuestion);
 
   let serial = 0;
 
   return (
     <div>
-      <h2>
+      <h2 className=" text-center">
         Take a Quiz about : <span className="text-success"> abcd</span>{" "}
       </h2>
 
@@ -91,4 +91,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default ExamPage;

@@ -3,27 +3,27 @@ import React from "react";
 const SignIn = () => {
   return (
     <>
-      <div className="flex h-screen w-full items-center justify-center  bg-cover bg-no-repeat">
+      <div className="flex  w-full items-center justify-center  bg-cover bg-no-repeat">
         <div className="rounded-xl bg-gray-800 bg-opacity-30 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
           <div className="text-white">
             <form>
               <div className="mb-1 text-lg flex flex-col">
-                <label htmlFor="" className="label text-start">
-                  <span className="label-text text-white">Your Full Name </span>
-                </label>
+                <p className="p text-start">
+                  <span className="p-text text-white">Your Full Name </span>
+                </p>
                 <input
-                  className="w-72 border-none bg-emerald-300 bg-opacity-10 px-6 py-1 text-center text-inherit placeholder-gray-400 shadow-lg outline-none backdrop-blur-md"
+                  className="w-72 border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit placeholder-black text-start shadow-lg outline-none backdrop-blur-md"
                   type="text"
                   name="name"
                   placeholder="Enter Your Name"
                 />
               </div>
               <div className="mb- text-lg flex flex-col">
-                <label htmlFor="" className="label text-start">
-                  <span className="label-text text-white">Your Email</span>
-                </label>
+                <p className="p text-start">
+                  <span className="p-text text-white">Your Email</span>
+                </p>
                 <input
-                  className="w-72 border-none bg-emerald-300 bg-opacity-10 px-6 py-1 text-center text-inherit  placeholder-gray-400 shadow-lg outline-none backdrop-blur-md"
+                  className="w-72 border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit  placeholder-black text-start shadow-lg outline-none backdrop-blur-md"
                   type="text"
                   name="email"
                   placeholder="Enter your email"
@@ -32,10 +32,10 @@ const SignIn = () => {
 
               <div className="mb- text-lg w-72 flex flex-col">
                 <p className=" text-start">
-                  <span className="label-text text-white">Password</span>
+                  <span className="p-text text-white">Password</span>
                 </p>
                 <input
-                  className="w-72 rounded border-none bg-emerald-300 bg-opacity-10 px-6 py-1 text-center text-inherit  placeholder-gray-400 shadow-lg outline-none backdrop-blur-md"
+                  className="w-72 rounded border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit  placeholder-black text-start shadow-lg outline-none backdrop-blur-md"
                   type="Password"
                   name="password"
                   placeholder="Enter your password"
