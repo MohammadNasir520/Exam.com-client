@@ -1,8 +1,10 @@
 "use client";
 
+import { useAppDispatch } from "@/redux/hooks";
 import "./SingleQuizCard.css";
 import React from "react";
 import { useState } from "react";
+import { answeredQuestionCount } from "@/redux/slices/examNumberSlices/examNumberSlieces";
 
 const SingleQuizCard = ({
   question,
@@ -30,6 +32,8 @@ const SingleQuizCard = ({
   const [disabled, setDisabled] = useState(false);
   const correctAnswer = question?.correctAnswer;
 
+  const dispatch = useAppDispatch();
+
   const handleOption = (anseredQestion: any) => {
     setAnsweredQuestion([...answeredQuestion, { question, anseredQestion }]);
 
@@ -37,6 +41,7 @@ const SingleQuizCard = ({
 
     if (anseredQestion) {
       setAnswered(answered + 1);
+      dispatch(answeredQuestionCount());
     }
     if (anseredQestion === correctAnswer) {
       return setCorrectAnsCount(correctAnsCount + 1);
