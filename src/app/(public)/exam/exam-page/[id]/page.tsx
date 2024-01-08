@@ -56,7 +56,7 @@ const ExamPage = () => {
   let serial = 0;
 
   return (
-    <div>
+    <div className="my-5">
       <h2 className=" text-center">
         Take a Quiz about : <span className="text-success"> abcd</span>{" "}
       </h2>
@@ -84,9 +84,13 @@ const ExamPage = () => {
           })
         }
       </div>
-      <Link href="">
-        <button className="btn btn-primary">Submit</button>
-      </Link>
+      <div className="flex justify-center items-center">
+        <Link href="">
+          <button className="text-center bg-[#013a63] text-white font-semibold px-10 py-2 rounded">
+            Submit
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
