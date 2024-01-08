@@ -23,6 +23,9 @@ const Navbar = () => {
           <Link className="mr-5 hover:text-gray-900" href="/addQuestions">
             addQuestion
           </Link>
+          <Link href="/profile" className="mr-5 hover:text-gray-900">
+            Dashboard
+          </Link>
         </nav>
 
         {user ? (
