@@ -38,14 +38,14 @@ const ExamTopics = () => {
       {data?.map((topic) => (
         <div key={topic?.id}>
           <Link href={`/exam/exam-page/${topic?.id}`}>
-            <div className=" h-[120px] w-[300px]     bg-[#f6fff8] rounded-sm flex  cursor-pointer ">
+            <div className=" h-[120px] w-[300px]     bg-[#e5f4fa] rounded-sm flex  cursor-pointer ">
               <div className="w-1/2 flex justify-center items-center">
-                <img
+                {/* <img
                   src={topic?.logo}
                   height={160}
                   width={140}
                   alt="math pic"
-                ></img>
+                ></img> */}
               </div>
               <div className="w-1/2 text-gray-500 p-2">
                 <h1 className="  text-center font-bold text-lg "></h1>

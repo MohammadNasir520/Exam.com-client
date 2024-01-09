@@ -8,6 +8,17 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
+/* dashboard css */
 .ant-layout-sider-children {
   background-color: white;
+}
+
+/* result page css */
+
+@media screen and (min-width: 768px) {
+  .results {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

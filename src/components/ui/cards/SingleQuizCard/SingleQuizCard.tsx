@@ -4,7 +4,11 @@ import { useAppDispatch } from "@/redux/hooks";
 import "./SingleQuizCard.css";
 import React from "react";
 import { useState } from "react";
-import { answeredQuestionCount } from "@/redux/slices/examNumberSlices/examNumberSlieces";
+import {
+  answeredQuestionCount,
+  correctAnsweredCount,
+  wrongAnsweredCount,
+} from "@/redux/slices/examNumberSlices/examNumberSlieces";
 
 const SingleQuizCard = ({
   question,
@@ -44,15 +48,17 @@ const SingleQuizCard = ({
       dispatch(answeredQuestionCount());
     }
     if (anseredQestion === correctAnswer) {
-      return setCorrectAnsCount(correctAnsCount + 1);
+      console.log("correct answer", correctAnswer);
+      return dispatch(correctAnsweredCount());
     } else if (anseredQestion !== correctAnswer) {
+      dispatch(wrongAnsweredCount());
       return setWrongAnsCount(wrongAnsCount + 1);
     }
   };
 
   return (
     <div className="flex justify-center items-center">
-      <div className="my-10 w-full  md:w-4/5   border  bg-red-50 ">
+      <div className="my-10 w-full  md:w-4/5   border  bg-[#A9D6E5] ">
         <div className="questions text-center">
           {serial}.{question.question}
         </div>

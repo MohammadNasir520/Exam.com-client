@@ -20,7 +20,7 @@ const ExamPage = () => {
         {
           question: "Rice is ___Noun",
           options: ["common ", "proper", "collective", "material"],
-          correctAnswer: "proper",
+          correctAnswer: "material",
         },
 
         {
@@ -31,7 +31,7 @@ const ExamPage = () => {
         {
           question: "Which one is not parts of speech?",
           options: ["noun", "pronoun", "gerund", "pack"],
-          correctAnswer: "gerund",
+          correctAnswer: "pack",
         },
         {
           question: "which one is not abstract noun?",
@@ -85,7 +85,7 @@ const ExamPage = () => {
         }
       </div>
       <div className="flex justify-center items-center">
-        <Link href="">
+        <Link href="/exam/result">
           <button className="text-center bg-[#013a63] text-white font-semibold px-10 py-2 rounded">
             Submit
           </button>

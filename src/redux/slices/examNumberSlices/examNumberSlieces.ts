@@ -19,9 +19,19 @@ const counterSlice = createSlice({
     answeredQuestionCount: (state) => {
       state.answeredQuestion += 1;
     },
+    correctAnsweredCount: (state) => {
+      state.correctAnswer += 1;
+    },
+    wrongAnsweredCount: (state) => {
+      state.wrongAnswer += 1;
+    },
   },
 });
 
-export const { answeredQuestionCount } = counterSlice.actions;
+export const {
+  answeredQuestionCount,
+  correctAnsweredCount,
+  wrongAnsweredCount,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;
