@@ -3,6 +3,9 @@ import React, { useState } from "react";
 
 import Link from "next/link";
 import SingleQuizCard from "@/components/ui/cards/SingleQuizCard/SingleQuizCard";
+import { useAppSelector } from "@/redux/hooks";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const ExamPage = () => {
   const data = [
@@ -39,17 +42,25 @@ const ExamPage = () => {
     },
   ];
 
-  const [answered, setAnswered] = useState(0);
-  const [correctAnsCount, setCorrectAnsCount] = useState(0);
-  const [wrongAnsCount, setWrongAnsCount] = useState(0);
+  const numberCount = useAppSelector(
+    (state) => state.examNumberCalculation.answeredQuestion
+  );
 
-  const result = { answered, correctAnsCount, wrongAnsCount };
+  const [answered, setAnswered] = useState(0);
 
   // stored answered option for checking correct anser
   const [answeredQuestion, setAnsweredQuestion] = useState([]);
   // console.log(answeredQuestion);
 
   let serial = 0;
+
+  const router = useRouter();
+  const handleSubmit = () => {
+    if (!numberCount || numberCount === 0) {
+      return toast.error("Please answer questions first");
+    }
+    router.push("/exam/result");
+  };
 
   return (
     <div className="my-5">
@@ -71,21 +82,18 @@ const ExamPage = () => {
                 answeredQuestion={answeredQuestion}
                 answered={answered}
                 setAnswered={setAnswered}
-                correctAnsCount={correctAnsCount}
-                setCorrectAnsCount={setCorrectAnsCount}
-                wrongAnsCount={wrongAnsCount}
-                setWrongAnsCount={setWrongAnsCount}
               ></SingleQuizCard>
             );
           })
         }
       </div>
       <div className="flex justify-center items-center">
-        <Link href="/exam/result">
-          <button className="text-center bg-[#013a63] text-white font-semibold px-10 py-2 rounded">
-            Submit
-          </button>
-        </Link>
+        <button
+          onClick={handleSubmit}
+          className="text-center bg-[#013a63] text-white font-semibold px-10 py-2 rounded"
+        >
+          Submit
+        </button>
       </div>
     </div>
   );

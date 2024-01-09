@@ -1,6 +1,6 @@
 "use client";
 
-import { useAppDispatch } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import "./SingleQuizCard.css";
 import React from "react";
 import { useState } from "react";
