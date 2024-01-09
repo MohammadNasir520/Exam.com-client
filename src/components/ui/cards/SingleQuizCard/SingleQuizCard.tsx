@@ -56,7 +56,7 @@ const SingleQuizCard = ({
 
         <div className="options-container">
           {question?.options?.map((option: any, index: number) => (
-            <div key={index} className=" md:text-xl lg:text-base rounded">
+            <div key={index} className={` md:text-xl lg:text-base rounded`}>
               <input
                 type="radio"
                 name={`question-${serial}`}

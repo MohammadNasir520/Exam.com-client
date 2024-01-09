@@ -50,7 +50,7 @@ const Result = () => {
             Final Marks: {finalMarks}
           </h5>
 
-          <Link href={`/coorrectAnswer/`}>
+          <Link href={`/exam/correct-answer-page/`}>
             <button className="bg-[#013A63] text-white p-2">
               See correct Answer
             </button>
