@@ -3,7 +3,7 @@ import React from "react";
 const SignUp = () => {
   return (
     <>
-      <div className="flex  w-full items-center justify-center  bg-cover bg-no-repeat">
+      <div className="flex  w-full items-center justify-center  bg-cover bg-no-repeat min-h-screen">
         <div className="rounded-xl bg-gray-800 bg-opacity-30 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
           <div className="text-white">
             <form>

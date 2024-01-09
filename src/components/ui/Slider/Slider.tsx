@@ -115,20 +115,19 @@ const TeachersCourses = () => {
               className="relative flex w-full md:min-h-[200px] max-w-[18rem] flex-col rounded-lg bg-gray-50 bg-clip-border text-gray-700 shadow-lg border"
             >
               <Link href={`/projects/${project?.id}`}>
-                <div className="relative  h-[220px]  overflow-hidden rounded bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                  <div className="flex justify-center  rounded overflow-hidden w-full">
+                <div className="relative    overflow-hidden rounded bg-blue-gray-500 bg-clip-border text-white ">
+                  <div className="flex justify-center  rounded w-full">
                     <Image
                       src={project?.image}
                       width={200}
-                      height={990}
+                      height={300}
                       alt="pic"
-                      // layout="responsive"
-                      className="transition-all duration-1000 transform hover:-translate-y-72 ease-out"
+                      layout="responsive"
                     ></Image>
                   </div>
                 </div>
               </Link>
-              <div className="">
+              <div className="px-3">
                 <div className="my-1 flex items-center justify-start">
                   <h5 className="block font-sans text-lg font-semibold leading-snug tracking-normal text-black antialiased">
                     {i + 1}. {project.title}
@@ -136,15 +135,15 @@ const TeachersCourses = () => {
                 </div>
                 <div className="my-1 flex items-center justify-start">
                   <h5 className="block font-sans text-lg font-semibold leading-snug tracking-normal text-black antialiased">
-                    {project.Topic}
+                    Topic: {project.Topic}
                   </h5>
                 </div>
               </div>
 
               <div className="mx-5 flex justify-center items-center">
                 <Link href={`/page-details`}>
-                  <button className="w-44 font-sans font-bold p-1   bg-black text-white mb-4">
-                    Details
+                  <button className="inline-flex items-center my-4 bg-[#2A6F97] hover:bg-[#013a63]  text-white border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
+                    Purchase
                   </button>
                 </Link>
               </div>
@@ -154,10 +153,7 @@ const TeachersCourses = () => {
       </Slider>
 
       <div className="flex justify-center my-8">
-        <button
-          className=" select-none rounded bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          type="button"
-        >
+        <button className="inline-flex items-center  bg-[#6ebcea] hover:bg-[#013a63]  text-white border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
           See All
         </button>
       </div>
