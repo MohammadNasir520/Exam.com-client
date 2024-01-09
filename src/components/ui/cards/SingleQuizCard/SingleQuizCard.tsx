@@ -9,6 +9,7 @@ import {
   correctAnsweredCount,
   wrongAnsweredCount,
 } from "@/redux/slices/examNumberSlices/examNumberSlieces";
+import { setCompareQuestion } from "@/redux/slices/compareAnsweredQestionsSlice/compareAnsweredQestionsSlice";
 
 const SingleQuizCard = ({
   question,
@@ -30,17 +31,18 @@ const SingleQuizCard = ({
 
   const dispatch = useAppDispatch();
 
-  const handleOption = (anseredQestion: any) => {
+  const handleOption = (anseredQestion: any, option: any) => {
     setAnsweredQuestion([...answeredQuestion, { question, anseredQestion }]);
 
     setDisabled(true);
 
     if (anseredQestion) {
-      setAnswered(answered + 1);
+      // console.log(anseredQestion, option);
+      // dispatch(setCompareQuestion({ anseredQestion, option }));
+
       dispatch(answeredQuestionCount());
     }
     if (anseredQestion === correctAnswer) {
-      console.log("correct answer", correctAnswer);
       return dispatch(correctAnsweredCount());
     } else if (anseredQestion !== correctAnswer) {
       return dispatch(wrongAnsweredCount());
@@ -63,7 +65,7 @@ const SingleQuizCard = ({
                 id={`option-${serial}-${index}`}
                 disabled={disabled ? true : false}
                 onClick={() => {
-                  handleOption(option);
+                  handleOption(question, option);
                 }}
               />
               <label htmlFor={`option-${serial}-${index}`}>{option} </label>

@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 
 import "./CorrectAnswer.css";
+import { useAppSelector } from "@/redux/hooks";
 
 const CorrectAnswer = () => {
   const data = [
@@ -36,10 +39,22 @@ const CorrectAnswer = () => {
       topic: "Noun",
     },
   ];
+  const number = useAppSelector((state) => state.examNumberCalculation);
 
+  const answeredQuestion = number?.answeredQuestion;
+  const correctAnsCount = number?.correctAnswer;
+  const wrongAnsCount = number?.wrongAnswer;
+
+  const result = correctAnsCount - wrongAnsCount * 0.5;
   return (
     <div>
-      <h1 className="text-center font-bold text-2xl"> Correct Answer</h1>
+      <div className=" flex justify-center  gap-12 my-7 font-semibold">
+        <p>You answered: {answeredQuestion}</p>
+        <p>correct: {correctAnsCount}</p>
+        <p>your Mark: {result}</p>
+      </div>
+      <h1 className="text-center font-bold text-2xl">Here is Correct Answer</h1>
+
       {data[0]?.questions?.map((question: any, i: number) => (
         //single question
         <div className="flex justify-center items-center flex-col " key={i}>
@@ -56,7 +71,7 @@ const CorrectAnswer = () => {
                       question.correctAnswer === option
                         ? "bg-green-600 text-white"
                         : "text-black-500 bg-white"
-                    }  option bg-white `}
+                    }  option  `}
                   >
                     {option}
                   </p>

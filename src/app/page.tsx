@@ -4,11 +4,11 @@ import FreeExams from "@/components/Views/FreeExams/page";
 import LiveExams from "@/components/Views/LiveExams/LiveExams";
 import Practices from "@/components/Views/Practices/Practices";
 import StudentReviews from "@/components/Views/StudentsReview/StudentReviews";
-import TeachersCourses from "@/components/Views/TeachersCourses/TeachersCourses";
+
 import TeachersReview from "@/components/Views/TeachersReview/TeachersReview";
 import TopTeachers from "@/components/Views/TopTeacher/TopTeachers";
 import Navbar from "@/components/ui/Navbar/Navbar";
-import { Button } from "antd";
+import TeachersCourses from "@/components/ui/Slider/Slider";
 
 export default function Home() {
   return (

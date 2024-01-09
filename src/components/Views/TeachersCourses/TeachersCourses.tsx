@@ -1,3 +1,6 @@
+import LearningProjects from "@/components/ui/Slider/Slider";
+import TeacherCourses from "@/components/ui/Slider/Slider";
+
 const TeachersCourses = () => {
   return (
     <div className="flex justify-center items-center">
@@ -7,6 +10,7 @@ const TeachersCourses = () => {
           Here are teachers courses, You can take any exam here
         </p>
       </div>
+      <div></div>
     </div>
   );
 };
