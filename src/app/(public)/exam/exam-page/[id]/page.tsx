@@ -1,10 +1,6 @@
 "use client";
 import React, { useState } from "react";
 
-// import "./Quiz.css";
-
-// import "react-toastify/dist/ReactToastify.css";
-
 import Link from "next/link";
 import SingleQuizCard from "@/components/ui/cards/SingleQuizCard/SingleQuizCard";
 

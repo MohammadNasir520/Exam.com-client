@@ -17,10 +17,6 @@ const SingleQuizCard = ({
   answeredQuestion,
   answered,
   setAnswered,
-  correctAnsCount,
-  setCorrectAnsCount,
-  wrongAnsCount,
-  setWrongAnsCount,
 }: {
   question: any;
   serial: any;
@@ -28,10 +24,6 @@ const SingleQuizCard = ({
   answeredQuestion: any;
   answered: any;
   setAnswered: any;
-  correctAnsCount: any;
-  setCorrectAnsCount: any;
-  wrongAnsCount: any;
-  setWrongAnsCount: any;
 }) => {
   const [disabled, setDisabled] = useState(false);
   const correctAnswer = question?.correctAnswer;
@@ -51,8 +43,7 @@ const SingleQuizCard = ({
       console.log("correct answer", correctAnswer);
       return dispatch(correctAnsweredCount());
     } else if (anseredQestion !== correctAnswer) {
-      dispatch(wrongAnsweredCount());
-      return setWrongAnsCount(wrongAnsCount + 1);
+      return dispatch(wrongAnsweredCount());
     }
   };
 
