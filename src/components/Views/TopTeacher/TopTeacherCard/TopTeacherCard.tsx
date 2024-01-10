@@ -6,7 +6,7 @@ import { IoMdStar } from "react-icons/io";
 const TopTeacherCard = () => {
   return (
     <div>
-      <div className="relative cursor-pointer flex max-w-[20rem] flex-col overflow-hidden  bg-white bg-clip-border text-gray-700 shadow-md">
+      <div className="relative  cursor-pointer flex max-w-[20rem] flex-col overflow-hidden  bg-white bg-clip-border text-gray-700 shadow-md">
         <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH5CsU8USPdbDcqWEDnE3_NWG4rEbg3NLcQQ&usqp=CAU"
