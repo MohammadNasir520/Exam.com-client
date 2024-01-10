@@ -32,8 +32,8 @@ const CorrectAnswer = () => {
         },
         {
           question: "which one is not abstract noun?",
-          options: ["Movement", "Wise", "Theft", "Deth"],
-          correctAnswer: "Wise",
+          options: ["Movement", "wise", "Theft", "Deth"],
+          correctAnswer: "2",
         },
       ],
       topic: "Noun",
@@ -68,7 +68,7 @@ const CorrectAnswer = () => {
                 <div className="" key={i}>
                   <p
                     className={`${
-                      question.correctAnswer === option
+                      question.correctAnswer == i + 1
                         ? "bg-green-600 text-white"
                         : "text-black-500 bg-white"
                     }  option  `}
