@@ -49,23 +49,86 @@ import FormInput from "@/components/Forms/FormInput";
 
 // export default AddQuestion;
 
+// // ... (imports remain the same)
+// import { useState } from "react";
+// import toast from "react-hot-toast";
+
+// const AddQuestion = () => {
+//   const [correctOption, setCorrectOption] = useState("");
+//   const onSubmit = (data: any) => {
+//     if (!correctOption) {
+//       return toast.error("select correct option first");
+//     }
+//     console.log(data);
+//   };
+
+//   const handleCorrectAnswerChange = (
+//     e: React.ChangeEvent<HTMLInputElement>
+//   ) => {
+//     setCorrectOption(e.target.value);
+//   };
+
+//   const options = ["a", "b", "c", "d", "e"];
+
+//   return (
+//     <div className="flex justify-center items-center flex-col">
+//       <h1 className="text-center text-2xl font-bold">
+//         {" "}
+//         Input Question and select Correct Answer
+//       </h1>
+//       <Form submitHandler={onSubmit}>
+//         <div className="flex justify-center flex-col w-full min-w-[400px] ">
+//           {/* Options A, B, C, D */}
+//           {options.map((option) => (
+//             <div key={option} className="my-3">
+//               <FormInput
+//                 name={option}
+//                 label={`Option ${option}`}
+//                 type="text"
+//               ></FormInput>
+//             </div>
+//           ))}
+
+//           {/* Radio buttons for selecting correct answer */}
+//           <div className="my-3">
+//             <p>Select Correct Answer:</p>
+//             {options.map((option) => (
+//               <label key={option} className="ml-2">
+//                 <input
+//                   type="radio"
+//                   name="correctAnswer"
+//                   value={option}
+//                   onChange={handleCorrectAnswerChange}
+//                 />{" "}
+//                 {`Option ${option}`}
+//               </label>
+//             ))}
+//           </div>
+//         </div>
+
+//         <button
+//           className="inline-flex items-center bg-[#2A6F97] hover:bg-[#013a63] text-white border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0"
+//           type="submit"
+//         >
+//           {" "}
+//           Submit
+//         </button>
+//       </Form>
+//     </div>
+//   );
+// };
+
+// export default AddQuestion;
+
 // ... (imports remain the same)
-import { useState } from "react";
-import toast from "react-hot-toast";
 
 const AddQuestion = () => {
-  const [correctOption, setCorrectOption] = useState("");
   const onSubmit = (data: any) => {
-    if (!correctOption) {
-      return toast.error("select correct option first");
-    }
     console.log(data);
   };
 
-  const handleCorrectAnswerChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setCorrectOption(e.target.value);
+  const handleCorrectAnswerChange = (option: string) => {
+    console.log(`Selected correct answer for Option ${option}: ${option}`);
   };
 
   return (
@@ -76,41 +139,35 @@ const AddQuestion = () => {
       </h1>
       <Form submitHandler={onSubmit}>
         <div className="flex justify-center flex-col w-full min-w-[400px] ">
-          {/* Options A, B, C, D */}
-          {["a", "b", "c", "d"].map((option) => (
-            <div key={option} className="my-3">
+          {["1", "2", "3", "4"].map((option) => (
+            <div key={option} className="my-3 flex items-center gap-2">
+              <label className="mr-2 block">
+                <input
+                  className="cursor-pointer "
+                  type="radio"
+                  name="correctAnswer"
+                  value={option}
+                  onChange={() => handleCorrectAnswerChange(option)}
+                />
+              </label>
               <FormInput
                 name={option}
-                label={`Option ${option}`}
+                label={` ${option}`}
                 type="text"
               ></FormInput>
             </div>
           ))}
-
-          {/* Radio buttons for selecting correct answer */}
-          <div className="my-3">
-            <p>Select Correct Answer:</p>
-            {["a", "b", "c", "d"].map((option) => (
-              <label key={option} className="ml-2">
-                <input
-                  type="radio"
-                  name="correctAnswer"
-                  value={option}
-                  onChange={handleCorrectAnswerChange}
-                />{" "}
-                {`Option ${option}`}
-              </label>
-            ))}
-          </div>
         </div>
 
-        <button
-          className="inline-flex items-center bg-[#2A6F97] hover:bg-[#013a63] text-white border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0"
-          type="submit"
-        >
-          {" "}
-          Submit
-        </button>
+        <div className="flex justify-center ">
+          <button
+            className="inline-flex  items-center bg-[#2A6F97] hover:bg-[#013a63] text-white border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0"
+            type="submit"
+          >
+            {" "}
+            Submit
+          </button>
+        </div>
       </Form>
     </div>
   );
