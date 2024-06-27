@@ -13,22 +13,23 @@ const CorrectAnswer = () => {
       id: 1,
       name: "English",
       logo: "https://4.bp.blogspot.com/-59mKGUm2lzA/XMEufd6mNoI/AAAAAAAAAco/15nrLpxcarkFdDLP78FxOFf8JDcmHv9MQCLcBGAs/s1600/bcs%2Benglish.jpg",
+      topic: "Noun",
       questions: [
         {
           question: "Rice is ___Noun",
           options: ["common ", "proper", "collective", "material"],
-          correctAnswer: "material",
+          correctAnswer: "4",
         },
 
         {
           question: 'which of the following words not similar to "school"?',
           options: ["flock", "herd", "college", "pack"],
-          correctAnswer: "college",
+          correctAnswer: "3",
         },
         {
           question: "Which one is not parts of speech?",
           options: ["noun", "pronoun", "gerund", "pack"],
-          correctAnswer: "pack",
+          correctAnswer: "4",
         },
         {
           question: "which one is not abstract noun?",
@@ -36,7 +37,6 @@ const CorrectAnswer = () => {
           correctAnswer: "2",
         },
       ],
-      topic: "Noun",
     },
   ];
   const number = useAppSelector((state) => state.examNumberCalculation);

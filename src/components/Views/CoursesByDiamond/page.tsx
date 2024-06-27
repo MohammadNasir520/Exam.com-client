@@ -2,16 +2,16 @@ import CourseByDiamondCard from "./CourseDiamondCard/CourseByDiamondCard";
 
 const CoursesByDiamond = () => {
   const CourseByDiamondData = [
-    { title: "Math", id: 1, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 2, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 3, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 4, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 5, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 6, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 7, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 8, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 9, totalTopic: 20, totalQuestion: 687 },
-    { title: "Math", id: 10, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 1, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 2, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 3, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 4, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 5, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 6, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 7, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 8, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 9, totalTopic: 20, totalQuestion: 687 },
+    { title: "English", id: 10, totalTopic: 20, totalQuestion: 687 },
   ];
   return (
     <div className="my-10">

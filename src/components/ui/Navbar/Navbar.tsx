@@ -4,7 +4,7 @@ import React from "react";
 const Navbar = () => {
   const user = null;
   return (
-    <header className="text-gray-600 body-font sticky top-0 z-10 bg-white">
+    <header className="text-gray-600 body-font sticky top-0 z-10 bg-white border">
       <nav className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link
           href={"/"}
@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
 
           <Link className="mr-5 hover:text-gray-900" href="/add-question">
-            addQuestion
+            AddQuestion
           </Link>
           <Link href="/profile" className="mr-5 hover:text-gray-900">
             Dashboard

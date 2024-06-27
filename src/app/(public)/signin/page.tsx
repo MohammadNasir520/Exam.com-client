@@ -9,23 +9,22 @@ const SignIn = () => {
             <form>
               <div className="mb- text-lg flex flex-col">
                 <p className="p text-start">
-                  <span className="p-text text-white">Your Email</span>
+                  <span className="p-text">Your Email</span>
                 </p>
                 <input
-                  className="w-72 border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit  placeholder-black text-start shadow-lg outline-none backdrop-blur-md"
+                  className="w-72 border-none  text-black  px-6 py-1 placeholder-slate-700    text-start shadow-lg placeholder:text-sm  outline-none backdrop-blur-md"
                   type="text"
                   name="email"
                   placeholder="Enter your email"
                 />
               </div>
-
-              <div className="mb- text-lg w-72 flex flex-col">
-                <p className=" text-start">
-                  <span className="p-text text-white">Password</span>
+              <div className="mb- text-lg flex flex-col">
+                <p className="p text-start">
+                  <span className="p-text">Your Email</span>
                 </p>
                 <input
-                  className="w-72 rounded border-none bg-emerald-300 bg-opacity-10 px-6 py-1  text-inherit  placeholder-black text-start shadow-lg outline-none backdrop-blur-md"
-                  type="Password"
+                  className="w-72 border-none  text-black  px-6 py-1 placeholder-slate-700 placeholder:text-sm   text-start shadow-lg outline-none backdrop-blur-md"
+                  type="password"
                   name="password"
                   placeholder="Enter your password"
                 />

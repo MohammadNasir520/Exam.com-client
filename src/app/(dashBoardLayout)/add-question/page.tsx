@@ -141,7 +141,7 @@ const AddQuestion = () => {
         <div className="flex justify-center flex-col w-full min-w-[400px] ">
           {["1", "2", "3", "4"].map((option) => (
             <div key={option} className="my-3 flex items-center gap-2">
-              <label className="mr-2 block">
+              <div className="mr-2 block">
                 <input
                   className="cursor-pointer "
                   type="radio"
@@ -149,7 +149,7 @@ const AddQuestion = () => {
                   value={option}
                   onChange={() => handleCorrectAnswerChange(option)}
                 />
-              </label>
+              </div>
               <FormInput
                 name={option}
                 label={` ${option}`}
