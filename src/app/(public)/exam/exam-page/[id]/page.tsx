@@ -71,7 +71,7 @@ const ExamPage = () => {
       <div>
         {
           // quizDetails.data.questions.map(question => {
-          data[0]?.questions?.map((question, index) => {
+          data[0]?.questions?.map((question: any, index: number) => {
             serial++;
             return (
               <SingleQuizCard

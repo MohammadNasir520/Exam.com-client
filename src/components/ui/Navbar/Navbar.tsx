@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -26,6 +27,19 @@ const Navbar = () => {
           <Link href="/profile" className="mr-5 hover:text-gray-900">
             Dashboard
           </Link>
+          <div
+            title="You Have 20 Gem, Take Free exam's to earn more"
+            className="flex items-center justify-center border px-2 rounded-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 "
+          >
+            <span className="text-white font-bold"> 20</span>
+            <Image
+              className="mb-2 ml-1"
+              src={"/images/gem.png"}
+              height={30}
+              width={30}
+              alt="gem"
+            ></Image>
+          </div>
         </nav>
 
         {user ? (

@@ -1,6 +1,9 @@
+import { useCreateUserMutation } from "@/redux/api/authApi/authApi";
+import Link from "next/link";
 import React from "react";
 
 const SignUp = () => {
+  const [createUser] = useCreateUserMutation();
   return (
     <>
       <div className="flex  w-full items-center justify-center  bg-cover bg-no-repeat min-h-screen">
@@ -50,6 +53,12 @@ const SignUp = () => {
                   SignUp
                 </button>
               </div>
+              <p>
+                Aready Have an Account?
+                <Link className="text-blue-700 ml-3 " href={"/signin"}>
+                  SignIn
+                </Link>
+              </p>
             </form>
           </div>
         </div>
