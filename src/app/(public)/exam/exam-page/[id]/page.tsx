@@ -1,92 +1,105 @@
 "use client";
 import React, { useState } from "react";
 
-import Link from "next/link";
-import SingleQuizCard from "@/components/ui/cards/SingleQuizCard/SingleQuizCard";
-import { useAppSelector } from "@/redux/hooks";
-import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { data } from "@/FakeData/fakedata";
+import { useDispatch } from "react-redux";
+import SelectedQuestionSlice, { setSelectQuestions } from "@/redux/features/SelectedQuestionSlice";
+import { useAppSelector } from "@/redux/hooks";
 
 const ExamPage = () => {
-  const data = [
-    {
-      _id: "63fa5d203390caf05411d521",
-      total: 8,
-      id: 1,
-      name: "English",
-      logo: "https://4.bp.blogspot.com/-59mKGUm2lzA/XMEufd6mNoI/AAAAAAAAAco/15nrLpxcarkFdDLP78FxOFf8JDcmHv9MQCLcBGAs/s1600/bcs%2Benglish.jpg",
-      questions: [
-        {
-          question: "Rice is ___Noun",
-          options: ["common ", "proper", "collective", "material"],
-          correctAnswer: "material",
-        },
+  const [selectedOptions, setSelectedOptions] = useState<any[]>([]);
+  console.log(selectedOptions);
+  const dispatch = useDispatch();
 
-        {
-          question: 'which of the following words not similar to "school"?',
-          options: ["flock", "herd", "college", "pack"],
-          correctAnswer: "college",
-        },
-        {
-          question: "Which one is not parts of speech?",
-          options: ["noun", "pronoun", "gerund", "pack"],
-          correctAnswer: "pack",
-        },
-        {
-          question: "which one is not abstract noun?",
-          options: ["Movement", "Wise", "Theft", "Deth"],
-          correctAnswer: "Wise",
-        },
-      ],
-      topic: "Noun",
-    },
-  ];
-
-  const numberCount = useAppSelector(
-    (state) => state.examNumberCalculation.answeredQuestion
-  );
-
-  const [answered, setAnswered] = useState(0);
-
-  // stored answered option for checking correct anser
-  const [answeredQuestion, setAnsweredQuestion] = useState([]);
-  // console.log(answeredQuestion);
-
-  let serial = 0;
 
   const router = useRouter();
   const handleSubmit = () => {
-    if (!numberCount || numberCount === 0) {
-      return toast.error("Please answer questions first");
-    }
+    // if (!numberCount || numberCount === 0) {
+    //   return toast.error("Please answer questions first");
+    // }
     router.push("/exam/result");
   };
 
+  // access fake data
+  const Quiz: any = data;
+
+  // dispatch(setSelectedOptions( {QId: QId, OpId: OpId} ))
+  const handleOptionSelect = (QId: number, OpId: number) => {
+    dispatch(setSelectQuestions({ QId, OpId }));
+    setSelectedOptions((prev: any[]) => [
+      ...prev.filter((option) => option.QId !== QId),
+      { QId, OpId },
+    ]);
+  };
+
+  const isSelected = (QId: number, OpId: string) =>
+    selectedOptions.some(
+      (option) => option.QId === QId && option.OpId === OpId
+    );
+
+  const isDisabled = (QId: number) =>
+    selectedOptions.some((option) => option.QId === QId);
+
   return (
     <div className="my-5">
-      <h2 className=" text-center">
-        Take a Quiz about : <span className="text-success"> abcd</span>{" "}
+      <h2 className="text-center">
+        Take a Quiz about: <span className="text-success"> {Quiz?.title}</span>
       </h2>
 
       <div>
-        {
-          // quizDetails.data.questions.map(question => {
-          data[0]?.questions?.map((question: any, index: number) => {
-            serial++;
-            return (
-              <SingleQuizCard
-                key={index}
-                serial={serial}
-                question={question}
-                setAnsweredQuestion={setAnsweredQuestion}
-                answeredQuestion={answeredQuestion}
-                answered={answered}
-                setAnswered={setAnswered}
-              ></SingleQuizCard>
-            );
-          })
-        }
+        {Quiz?.questions?.map((question: any, index: number) => {
+          return (
+            <div
+              key={question.QId}
+              className="border p-4 shadow-md my-9 md:mx-10 rounded"
+            >
+              <p className="text-black text-center">
+                {index + 1}. {question?.question}
+              </p>
+
+              <div className="grid grid-cols-2">
+                {question.options?.map((option: any, i: number) => {
+                  const optionSelected = isSelected(question.QId, option.OpId);
+                  const optionDisabled = isDisabled(question.QId);
+
+                  return (
+                    <div
+                      key={i}
+                      onClick={() =>
+                        !optionDisabled &&
+                        handleOptionSelect(question.QId, option.OpId)
+                      }
+                      className={`${
+                        optionSelected
+                          ? "bg-slate-700 text-white"
+                          : "text-slate-700"
+                      } ${
+                        optionDisabled ? "cursor-not-allowed" : "cursor-pointer"
+                      } 
+                      w-11/12 lg:w-4/5 my-2 mx-auto relative ${
+                        !optionDisabled && "hover:bg-slate-700 hover:text-white"
+                      } bg-[#35b9f760] font-poppins border-2 border-slate-100 
+                      rounded p-2.5 flex justify-center items-center shadow-md`}
+                    >
+                      <div className="flex items-center gap-2 text-start">
+                        <div className="h-6 w-6 bg-white flex items-center justify-center rounded-full p-2">
+                          <p className="text-black">
+                            {String.fromCharCode(97 + i)}{" "}
+                            {/* 'a', 'b', 'c', 'd', etc. */}
+                          </p>
+                        </div>
+                        <p>{option.option}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
+
       <div className="flex justify-center items-center">
         <button
           onClick={handleSubmit}

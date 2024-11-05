@@ -30,8 +30,25 @@ const SidebarItems = (role: string) => {
       ],
     },
   ];
+  const SuperAdminSidebarItems: MenuProps["items"] = [
+    ...defaultSidebarItems,
+
+    {
+      label: "Add Question",
+      key: "Add Question",
+      children: [
+        {
+          label: <Link href={"/add-question"}>Add Question</Link>,
+          key: "Add Question",
+        },
+      ],
+    },
+  ];
+
   if (role === userRole.student) {
     return studentSidebarItems;
+  } else if (role === userRole.superAdmin) {
+    return SuperAdminSidebarItems;
   }
 };
 

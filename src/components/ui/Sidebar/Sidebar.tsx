@@ -12,39 +12,9 @@ import {
 import type { MenuProps } from "antd";
 import Link from "next/link";
 import SidebarItems from "./SidebarItems/SidebarItems";
+import { getUserInfo } from "@/services/authServices";
 
-// type MenuItem = Required<MenuProps>["items"][number];
-
-// function getItem(
-//   label: React.ReactNode,
-//   key: React.Key,
-//   icon?: React.ReactNode,
-//   children?: MenuItem[]
-// ): MenuItem {
-//   return {
-//     key,
-//     icon,
-//     children,
-//     label,
-//   } as MenuItem;
-// }
-
-// const items: MenuItem[] = [
-//   getItem("Option 1", "1", <PieChartOutlined />),
-//   getItem("Option 2", "2", <DesktopOutlined />),
-//   getItem("User", "sub1", <UserOutlined />, [
-//     getItem("Tom", "3"),
-//     getItem("Bill", "4"),
-//     getItem("Alex", "5"),
-//   ]),
-//   getItem("Team", "sub2", <TeamOutlined />, [
-//     getItem("Team 1", "6"),
-//     getItem("Team 2", "8"),
-//   ]),
-//   getItem("Files", "9", <FileOutlined />),
-// ];
-
-const role = "student";
+const { role } = getUserInfo() as any;
 
 const Sidebar = () => {
   const items: MenuProps["items"] = [
@@ -66,9 +36,9 @@ const Sidebar = () => {
       style={{
         minHeight: "100vh",
       }}
-      //   collapsible
-      //   collapsed={collapsed}
-      //   onCollapse={(value) => setCollapsed(value)}
+      collapsible
+      collapsed={collapsed}
+      onCollapse={(value) => setCollapsed(value)}
     >
       <div className="text-center text-2xl font-bold text-black">
         <Link className="text-black" href={"/"}>
